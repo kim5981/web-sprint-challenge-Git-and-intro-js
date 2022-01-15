@@ -216,7 +216,7 @@ console.log("- TASK 1A: ", artists[0].name);
 
 //(2) Bio <-- of the third artist (2nd index) in the array 
 
-console.log("- TASK 1B: ", artists[2].bio);
+//console.log("- TASK 1B: ", artists[2].bio);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
@@ -254,42 +254,27 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 
 
-
+//split will take what's in "" and compile it into a list
+//if you are splitting up everything what are you looking for? just the 19? 19xx? 
+//in that case would you use include after split?
 //let years = array[i].split(" ");
 
 function get20s (array) {
   const newArray = [];
   
-  //when split years is here ^^ error keeps saying i is not defined in splitYears but i don't want to split the entire array, just at the index that is getting looped :(
+  //when split years is outside of loop ^^ error keeps saying i is not defined in splitYears but i don't want to split the entire array, just at the index that is getting looped :(
   for ( let i=0; i < array.length; i++) { 
     //write a condition for detecting if splitYears has 1900 reqs 
-    const splitYears = array[i].split(" ");
-    //when splitYears is here ^^ i get error message array[i].split is not a function
-    return newArray.push(splitYears);
+    const splitYears = array[i].split(" "); 
+    if (splitYears.include("19")) {
+      return newArray.push(splitYears);
+    }
+    //when splitYears is inside of loop ^^ i get error message array[i].split is not a function
+    
   }
 }
 
 console.log("- TASK 4: ", get20s(artists));
-
-/*
-function get20s(array, years) {
-  //establish new array to place names in
-  const thatCentury = [];
-  //establish the method that will split the spaces in the array at each "years key"
-  //const splitYears = array[i].split(" ").years;
-  //loop through the array to search for artist years
-  for (let i = 0; i<array.length; i++){
-    
-    //set the condition so that if the STRING is for 1900 - 2000 ..
-    if (array[i].includes(years) || array[i].includes(years)) {
-      //then it will push those names to the array we made (thatCentury)
-      thatCentury.push(array[i].name);
-    }
-  }
-  //return the new array after the loop but within the function
-  return thatCentury;
-}
-*/
 
 
 
@@ -313,16 +298,16 @@ function removeArtist(array, i) {
   for (let i = 0; i < array.length; i++){ 
     
       //remove the index according to their name key
-      //i dont know if this syntax is allowed.. array.splice([i.name],1);
-     array.splice([i],1);
+     array.splice(array[i].name);
     
   }
-  //return array length!
+  //return array length
   return array.length; 
 }
 
 console.log("- TASK 5", removeArtist(artists, 0));
-//keeps returning 20 and im not sure why :/
+//keeps returning 20 and im not sure why
+
 
 
 
