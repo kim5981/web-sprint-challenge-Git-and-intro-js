@@ -239,6 +239,9 @@ function getArtistByIndex(array, index) {
 
 console.log("- TASK 3:", getArtistByIndex(artists, 0));
 
+
+
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
 1. Receive an array
@@ -256,9 +259,12 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s (array) {
   const newArray = [];
-  const splitYears = array[i].split(" ");
+  
+  //when split years is here ^^ error keeps saying i is not defined in splitYears but i don't want to split the entire array, just at the index that is getting looped :(
   for ( let i=0; i < array.length; i++) { 
-    
+    //write a condition for detecting if splitYears has 1900 reqs 
+    const splitYears = array[i].split(" ");
+    //when splitYears is here ^^ i get error message array[i].split is not a function
     return newArray.push(splitYears);
   }
 }
@@ -307,7 +313,8 @@ function removeArtist(array, i) {
   for (let i = 0; i < array.length; i++){ 
     
       //remove the index according to their name key
-     array.splice([i.name],1);
+      //i dont know if this syntax is allowed.. array.splice([i.name],1);
+     array.splice([i],1);
     
   }
   //return array length!
@@ -315,7 +322,7 @@ function removeArtist(array, i) {
 }
 
 console.log("- TASK 5", removeArtist(artists, 0));
-
+//keeps returning 20 and im not sure why :/
 
 
 
@@ -337,14 +344,7 @@ Example: addArtist(artists) should return the artists array with the above objec
 
 
 
-const newObj = {
-id: 20,
-name: "kim", 
-years: 1995 - 2022,
-genre: "Web Design", 
-nationality: "american",
-bio: "struggling web 52 student",
-}
+
 
 function addArtist(array) {
 
