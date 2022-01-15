@@ -249,19 +249,43 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
 
-function get20s(array) {
-  const thatCentury = [];
-  const splitYears = array.split(" ");
 
-  for (let i = 0; i<array.length; i++){
-    if (splitYears.includes(1900).years) {
-      thatCentury.push(array[i].name);
-    }
+
+
+//let years = array[i].split(" ");
+
+function get20s (array) {
+  const newArray = [];
+  const splitYears = array[i].split(" ");
+  for ( let i=0; i < array.length; i++) { 
+    
+    return newArray.push(splitYears);
   }
-  return thatCentury;
 }
 
 console.log("- TASK 4: ", get20s(artists));
+
+/*
+function get20s(array, years) {
+  //establish new array to place names in
+  const thatCentury = [];
+  //establish the method that will split the spaces in the array at each "years key"
+  //const splitYears = array[i].split(" ").years;
+  //loop through the array to search for artist years
+  for (let i = 0; i<array.length; i++){
+    
+    //set the condition so that if the STRING is for 1900 - 2000 ..
+    if (array[i].includes(years) || array[i].includes(years)) {
+      //then it will push those names to the array we made (thatCentury)
+      thatCentury.push(array[i].name);
+    }
+  }
+  //return the new array after the loop but within the function
+  return thatCentury;
+}
+*/
+
+
 
 
 
@@ -274,15 +298,26 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(array, index) {
-  for (let i = 0; i < array.length; i++){
-      array.splice(array[i].name);
+
+//if (array[i].includes(array[i].name)) 
+
+
+function removeArtist(array, i) {
+  //loop thru array to scan all artists at every index
+  for (let i = 0; i < array.length; i++){ 
+    
+      //remove the index according to their name key
+     array.splice([i.name],1);
+    
   }
-  
+  //return array length!
   return array.length; 
 }
 
 console.log("- TASK 5", removeArtist(artists, 0));
+
+
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -302,19 +337,32 @@ Example: addArtist(artists) should return the artists array with the above objec
 
 
 
-function addArtist(array) {
-  const newObj =
-  {id: 20,
-  name: "kim", 
-  years: 1995 - 2022,
-  genre: "Web Design", 
-  nationality: "american",
-  bio: "struggling web 52 student",
+const newObj = {
+id: 20,
+name: "kim", 
+years: 1995 - 2022,
+genre: "Web Design", 
+nationality: "american",
+bio: "struggling web 52 student",
 }
+
+function addArtist(array) {
+
+  const newObj = {
+    id: 20,
+    name: "kim", 
+    years: 1995 - 2022,
+    genre: "Web Design", 
+    nationality: "american",
+    bio: "struggling web 52 student",
+    }
+
 return array.push(newObj);
 }
 
-console.log("- TASK 6: ", addArtist(artists))
+console.log("- TASK 6: ", addArtist(artists.length -1));
+
+
 
 
 
@@ -324,6 +372,8 @@ Use lotsOfArt to do the following:
 2. Return an array with names of artists in the received array who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
+
+
 
 function lotsOfArt(array) {
   for (let i = 0; i < array.length; i++) {
@@ -336,6 +386,9 @@ function lotsOfArt(array) {
 console.log("- TASK 7: ", lotsOfArt(artists));
 
 
+
+
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistInfo to do the following: 
 1. Receive an array 
@@ -345,11 +398,19 @@ Use artistInfo to do the following:
 For example artistInfo(artists, 'Frida Kahlo') will return: 
   ["Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."]
 */
+
+
+
 function artistInfo(array, name){
-  return array[i].bio;
+  for (let i=0; i<array.length; i++) {
+    if (array[i].name === name) {
+      return array.bio;
+    }
+  }
 }
 
 console.log("- TASK 8: ", artistInfo(artists, "Frida Kahlo"));
+
 
 
 
@@ -361,6 +422,8 @@ Use artistByCountry to do the following:
 
 For example artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
+
+
 
 function artistByCountry(array, nationality){
   const country = [];
