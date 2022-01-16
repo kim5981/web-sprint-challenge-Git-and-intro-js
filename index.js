@@ -1,4 +1,4 @@
-//this is an array called artists w/ 20 indexes; 8 dif keys for e/ artist
+
 const artists = [
   {
     "id": 0,
@@ -10,6 +10,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Amedeo_Modigliani",
     "paintings": 193
   },
+
   {
     "id": 1,
     "name": "Vasiliy Kandinskiy",
@@ -20,6 +21,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Wassily_Kandinsky",
     "paintings": 88
   },
+
   {
     "id": 2,
     "name": "Diego Rivera",
@@ -30,6 +32,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Diego_Rivera",
     "paintings": 70
   },
+
   {
     "id": 3,
     "name": "Claude Monet",
@@ -40,6 +43,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Claude_Monet",
     "paintings": 73
   },
+
   {
     "id": 4,
     "name": "Rene Magritte",
@@ -50,6 +54,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/René_Magritte",
     "paintings": 194
   },
+
   {
     "id": 5,
     "name": "Salvador Dali",
@@ -60,6 +65,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Salvador_Dalí",
     "paintings": 139
   },
+
   {
     "id": 6,
     "name": "Edouard Manet",
@@ -70,6 +76,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Édouard_Manet",
     "paintings": 90
   },
+
   {
     "id": 7,
     "name": "Andrei Rublev",
@@ -80,6 +87,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Andrei_Rublev",
     "paintings": 99
   },
+
   {
     "id": 8,
     "name": "Vincent van Dough",
@@ -90,6 +98,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Vincent_van_Gogh",
     "paintings": 877
   },
+
   {
     "id": 9,
     "name": "Gustav Klimt",
@@ -100,6 +109,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Gustav_Klimt",
     "paintings": 117
   },
+
   {
     "id": 10,
     "name": "Hieronymus Bosch",
@@ -110,6 +120,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Hieronymus_Bosch",
     "paintings": 137
   },
+
   {
     "id": 11,
     "name": "Kazimir Malevich",
@@ -120,6 +131,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Kazimir_Malevich",
     "paintings": 126
   },
+
   {
     "id": 12,
     "name": "Mikhail Vrubel",
@@ -130,6 +142,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Mikhail_Vrubel",
     "paintings": 171
   },
+
   {
     "id": 13,
     "name": "Pablo Picasso",
@@ -140,6 +153,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Pablo_Picasso",
     "paintings": 439
   },
+
   {
     "id": 14,
     "name": "Peter Paul Rubens",
@@ -150,6 +164,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Peter_Paul_Rubens",
     "paintings": 141
   },
+
   {
     "id": 15,
     "name": "Pierre-Auguste Renoir",
@@ -160,6 +175,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Pierre-Auguste_Renoir",
     "paintings": 336
   },
+
   {
     "id": 16,
     "name": "Francisco Goya",
@@ -170,6 +186,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Francisco_Goya",
     "paintings": 291
   },
+
   {
     "id": 17,
     "name": "Frida Kahlo",
@@ -180,6 +197,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/Frida_Kahlo",
     "paintings": 120
   },
+
   {
     "id": 18,
     "name": "El Greco",
@@ -190,6 +208,7 @@ const artists = [
     "wikipedia": "http://en.wikipedia.org/wiki/El_Greco",
     "paintings": 87
   },
+
   {
     "id": 19,
     "name": "Albrecht Dürer",
@@ -201,6 +220,10 @@ const artists = [
     "paintings": 328
   }
 ]
+
+//array artists with objects inside 
+//the objects are accessed as indexes
+//the items inside the indexes are accessed as keys normally are: with dot or bracket notation like.this; or like["this"];
 
 // 🖌🖼 M V P 🖼🖌 //
 
@@ -274,7 +297,7 @@ function get20s (array) {
   }
 }
 
-console.log("- TASK 4: ", get20s(artists));
+//console.log("- TASK 4: ", get20s(artists));
 
 
 
@@ -290,19 +313,15 @@ Use removeArtist to do the following:
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
 
-//if (array[i].includes(array[i].name)) 
 
 
-function removeArtist(array, i) {
-  //loop thru array to scan all artists at every index
-  for (let i = 0; i < array.length; i++){ 
-    
-      //remove the index according to their name key
-     array.splice(array[i].name);
+
+function removeArtist(array, i) { 
+  for (let i = 0; i < i.length; i++) {
+    array.name.splice(i,1);
     
   }
-  //return array length
-  return array.length; 
+return array.length
 }
 
 console.log("- TASK 5", removeArtist(artists, 0));
@@ -326,27 +345,30 @@ Use addArtist to do the following:
 3. Return the resulting array
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
+//should have 21 items now, but 20th index
 
-
+//establish newArtist as object
+let newArtist = {
+  id: 20, //20th index
+  name: "kim", 
+  years: "1995 - 2022",
+  genre: "web development", 
+  nationality: "american",
+  bio: "struggling web 52 student",
+  }
 
 
 
 function addArtist(array) {
+//push the object
+ array.push(newArtist)
+//return the array
+return array;
 
-  const newObj = {
-    id: 20,
-    name: "kim", 
-    years: 1995 - 2022,
-    genre: "Web Design", 
-    nationality: "american",
-    bio: "struggling web 52 student",
-    }
-
-return array.push(newObj);
 }
 
-console.log("- TASK 6: ", addArtist(artists.length -1));
-
+//console.log("- TASK 6: ", addArtist(artists));
+console.log("- TASK 6: is finally working!!!");
 
 
 
@@ -361,14 +383,22 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 
 
 function lotsOfArt(array) {
+  //array to be returned that will hold names of artists
+  const over100 = [];
+//loop through the array
   for (let i = 0; i < array.length; i++) {
-    if (array[i].painting > 100) {
-      return array[i].name;
+    //..if paintings are over 100 then..
+    if (array[i].paintings > 100) {
+      //push that artist name to the array we made
+      over100.push(array[i].name);
     }
   }
+  return over100;
 }
 
-console.log("- TASK 7: ", lotsOfArt(artists));
+//console.log("- TASK 7: ", lotsOfArt(artists));
+//should return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
+console.log("- TASK 7: IS ALSO FINALLY WORKING !!!!");
 
 
 
