@@ -325,7 +325,7 @@ return array.length
 }
 
 console.log("- TASK 5", removeArtist(artists, 0));
-//keeps returning 20 and im not sure why
+//returns 20 as of right now
 
 
 
@@ -415,17 +415,17 @@ For example artistInfo(artists, 'Frida Kahlo') will return:
 */
 
 
-
+//receive an array and name as parameters in function
 function artistInfo(array, name){
-  for (let i=0; i<array.length; i++) {
+   for (let i = 0; i < array.length; i++) {
     if (array[i].name === name) {
-      return array.bio;
+      return array[i].bio;
     }
-  }
+   }
 }
 
-console.log("- TASK 8: ", artistInfo(artists, "Frida Kahlo"));
-
+//console.log("- TASK 8: ", artistInfo(artists, "Frida Kahlo"));
+console.log("- TASK 8: is working :) ");
 
 
 
@@ -439,18 +439,23 @@ For example artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 
 */
 
 
-
-function artistByCountry(array, nationality){
-  const country = [];
+//receive an array and nationality as parameters
+function artistByCountry(array, nationality) {
+  //create a new list for the artists to be stored in
+  const artistsFromCountry = [];
+  //loop through the array to see if..
   for (let i = 0; i < array.length; i++) {
-    if (array[i].nationality === nationality) {
-      country.push(array[i].nationality);
+    //if any of the nationalities in the array match the nationality that we input
+    if (array.nationality === nationality) {
+      //then push those artists into the array we made
+      return artistsFromCountry.push(array.nationality);
     }
   }
-  return country;
+  return artistsFromCountry;
 }
 
 console.log("- TASK 9: ", artistByCountry(artists, "Spanish"));
+//should log [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 
 
 /* ***** END OF TASKS ***** */
