@@ -437,6 +437,10 @@ Use artistByCountry to do the following:
 
 For example artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
+//we need a function that looks at an array and compares two keys with in the objects/indexes of that array
+//if the index contains nationality then it should return the name from that same index
+//so we loop through the array in order to check
+//
 
 
 //receive an array and nationality as parameters
@@ -446,9 +450,9 @@ function artistByCountry(array, nationality) {
   //loop through the array to see if..
   for (let i = 0; i < array.length; i++) {
     //if any of the nationalities in the array match the nationality that we input
-    if (array.nationality === nationality) {
-      //then push those artists into the array we made
-      return artistsFromCountry.push(array.nationality);
+    if (array[i].nationality === nationality) {
+      //then push those artists (NAME) into the array we made
+       artistsFromCountry.push(array[i].name);
     }
   }
   return artistsFromCountry;
