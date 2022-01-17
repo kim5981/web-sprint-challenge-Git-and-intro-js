@@ -105,7 +105,7 @@ const artists = [
     "years": "1862 - 1918",
     "genre": "Symbolism,Art Nouveau",
     "nationality": "Austrian",
-    "bio": "Gustav Klimt (July 14, 1862 – February 6, 1918) was an Austrian symbolist painter and one of the most prominent members of the Vienna Secession movement. Klimt is noted for his paintings, murals, sketches, and other objets d'art. Klimt's primary subject was the female body, and his works are marked by a frank eroticism. In addition to his figurative works, which include allegories and portraits, he painted landscapes. Among the artists of the Vienna Secession, Klimt was the most influenced by Japanese art and its methods.",
+    "bio": "Gustav Klimt (July 14, 1862 – February 6, 1918) was an Austrian symbolist painter and one of the most prominent members of the Vienna Secession movement. Klimt is noted for his paintings, murals, sketches, and other objects d'art. Klimt's primary subject was the female body, and his works are marked by a frank eroticism. In addition to his figurative works, which include allegories and portraits, he painted landscapes. Among the artists of the Vienna Secession, Klimt was the most influenced by Japanese art and its methods.",
     "wikipedia": "http://en.wikipedia.org/wiki/Gustav_Klimt",
     "paintings": 117
   },
@@ -278,41 +278,47 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 
 //split will take what's in "" and compile it into a list
-//if you are splitting up everything what are you looking for? just the 19? 19xx? 
-//in that case would you use include after split?
+
 //let years = array[i].split(" ");
-/*
 
-function splitYears (array, i) { 
-  let theYears = array[i].split(" ");
-  for (let i=0; i < array.length; i++) {
-    if (theYears.includes("19")) {
-      return array[i].name;
-    }
-  }
-} 
-
-console.log(splitYears(artists, "years"));
+//1995-2022
+//"1995-2022"
 
 
+
+
+//take array as parameter
 function get20s (array) {
+  //making a new array for the names to be stored in
   const newArray = [];
-  
-  //when split years is outside of loop ^^ error keeps saying i is not defined in splitYears but i don't want to split the entire array, just at the index that is getting looped :(
-  for ( let i=0; i < array.length; i++) { 
-    //write a condition for detecting if splitYears has 1900 reqs 
-    const splitYears = array[i].split(" "); 
-    if (splitYears.include("19")) {
-      return newArray.push(splitYears);
-    }
-    //when splitYears is inside of loop ^^ i get error message array[i].split is not a function
-    
+
+  for (let i = 0; i < array.length; i++) {
+     //using split to divide each word into an element in a new array called splitYears
+   const splitYears = array[i].years.split(" - ").map(n => parseFloat (n));
+
+console.log(splitYears);
+//loop thru splitYears. why? to search thru splitYears array
+for (let j=0; j < splitYears.length; j++) {
+  //while it's looping.. check to see if the index that it's looping through "j" at the first index "0" of each of those indexes, it must be > 1900
+  //and at the "j" index at the second index "1" of each of those indexes, it must be < 2000
+  if (splitYears[j][0]> 1900 && splitYears[j][1] < 2000) {
+    //if it is then push the names from the indexes of artist.name to the newArray
+      
+    //then push the names from the original array to the new array that we made
+    return newArray.push(array[i].name);
+  } else {
+    return false
   }
 }
+ 
 
-//console.log("- TASK 4: ", get20s(artists));
+  }
+  //return that new array with list of names
+  return newArray;
+}
 
-*/
+console.log("- TASK 4: ", get20s(artists));
+
 
 
 
@@ -429,6 +435,7 @@ function artistInfo(array, name){
       return array[i].bio;
     }
    }
+  
 }
 
 //console.log("------- TASK 8: ", artistInfo(artists, "Frida Kahlo"));
