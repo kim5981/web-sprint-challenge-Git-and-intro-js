@@ -281,6 +281,19 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 //if you are splitting up everything what are you looking for? just the 19? 19xx? 
 //in that case would you use include after split?
 //let years = array[i].split(" ");
+/*
+
+function splitYears (array, i) { 
+  let theYears = array[i].split(" ");
+  for (let i=0; i < array.length; i++) {
+    if (theYears.includes("19")) {
+      return array[i].name;
+    }
+  }
+} 
+
+console.log(splitYears(artists, "years"));
+
 
 function get20s (array) {
   const newArray = [];
@@ -299,7 +312,7 @@ function get20s (array) {
 
 //console.log("- TASK 4: ", get20s(artists));
 
-
+*/
 
 
 
@@ -313,19 +326,13 @@ Use removeArtist to do the following:
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
 
-
-
-
 function removeArtist(array, i) { 
-  for (let i = 0; i < i.length; i++) {
-    array.name.splice(i,1);
-    
-  }
-return array.length
+  array.splice(i,1)
+  return array.length;
 }
 
 console.log("- TASK 5", removeArtist(artists, 0));
-//returns 20 as of right now
+
 
 
 
@@ -424,7 +431,7 @@ function artistInfo(array, name){
    }
 }
 
-//console.log("- TASK 8: ", artistInfo(artists, "Frida Kahlo"));
+//console.log("------- TASK 8: ", artistInfo(artists, "Frida Kahlo"));
 console.log("- TASK 8: is working :) ");
 
 
