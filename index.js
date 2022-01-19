@@ -234,7 +234,7 @@ Practice accessing data above by console.log-ing following items:
 //(1) Name <-- of the first artist (0th index) in the array 
 //referencing array called artists
 
-console.log("- TASK 1A: ", artists[0].name);
+//console.log("- TASK 1A: ", artists[0].name);
 
 
 //(2) Bio <-- of the third artist (2nd index) in the array 
@@ -246,7 +246,7 @@ console.log("- TASK 1A: ", artists[0].name);
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 
 artists[8].name = "Vincent Van Gogh";
-console.log("- TASK 2: ", artists[8].name);
+//console.log("- TASK 2: ", artists[8].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -260,7 +260,7 @@ function getArtistByIndex(array, index) {
   return `the artist at index ${index} is ${array[index].name}`;
 }
 
-console.log("- TASK 3:", getArtistByIndex(artists, 0));
+//console.log("- TASK 3:", getArtistByIndex(artists, 0));
 
 
 
@@ -277,12 +277,9 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 
 
-//split will take what's in "" and compile it into a list
+//split will take what's in "" and compile it into a list (a new array)
 
-//let years = array[i].split(" ");
 
-//1995-2022
-//"1995-2022"
 
 
 
@@ -291,33 +288,18 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 function get20s (array) {
   //making a new array for the names to be stored in
   const newArray = [];
-
+//loop thru array - artists array
   for (let i = 0; i < array.length; i++) {
-     //using split to divide each word into an element in a new array called splitYears
-   const splitYears = array[i].years.split(" - ").map(n => parseFloat (n));
-
-console.log(splitYears);
-//loop thru splitYears. why? to search thru splitYears array
-for (let j=0; j < splitYears.length; j++) {
-  //while it's looping.. check to see if the index that it's looping through "j" at the first index "0" of each of those indexes, it must be > 1900
-  //and at the "j" index at the second index "1" of each of those indexes, it must be < 2000
-  if (splitYears[j][0]> 1900 && splitYears[j][1] < 2000) {
-    //if it is then push the names from the indexes of artist.name to the newArray
-      
-    //then push the names from the original array to the new array that we made
-    return newArray.push(array[i].name);
-  } else {
-    return false
-  }
-}
- 
-
-  }
-  //return that new array with list of names
-  return newArray;
+     //split artists  at desired index by "-" and if the contents are between the century 1900 - 2000 
+     if (array[i].years.split("-")[0] > 1900 && array[i].years.split("-")[0] < 2000) {
+       //push the contents of that ^^^^ to the array we made earlier (newArray)
+       newArray.push(array[i].name)
+     }
+} //return that array
+return newArray
 }
 
-console.log("- TASK 4: ", get20s(artists));
+//console.log("- TASK 4: ", get20s(artists)); //should print sal dali & frida 
 
 
 
@@ -337,7 +319,7 @@ function removeArtist(array, i) {
   return array.length;
 }
 
-console.log("- TASK 5", removeArtist(artists, 0));
+//console.log("- TASK 5", removeArtist(artists, 0));
 
 
 
@@ -381,7 +363,7 @@ return array;
 }
 
 //console.log("- TASK 6: ", addArtist(artists));
-console.log("- TASK 6: is finally working!!!");
+//console.log("- TASK 6: is finally working!!!");
 
 
 
@@ -411,7 +393,7 @@ function lotsOfArt(array) {
 
 //console.log("- TASK 7: ", lotsOfArt(artists));
 //should return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
-console.log("- TASK 7: IS ALSO FINALLY WORKING !!!!");
+//console.log("- TASK 7: IS ALSO FINALLY WORKING !!!!");
 
 
 
@@ -430,16 +412,16 @@ For example artistInfo(artists, 'Frida Kahlo') will return:
 
 //receive an array and name as parameters in function
 function artistInfo(array, name){
+  //loop through the input array (artists)
    for (let i = 0; i < array.length; i++) {
-    if (array[i].name === name) {
+     if (array[i].name === name) {
       return array[i].bio;
+     }
     }
-   }
-  
 }
 
-//console.log("------- TASK 8: ", artistInfo(artists, "Frida Kahlo"));
-console.log("- TASK 8: is working :) ");
+//console.log("- TASK 8: ", artistInfo(artists, "Frida Kahlo"));
+//artistInfo is logging correctly but is not passing the test 
 
 
 
@@ -472,7 +454,7 @@ function artistByCountry(array, nationality) {
   return artistsFromCountry;
 }
 
-console.log("- TASK 9: ", artistByCountry(artists, "Spanish"));
+//console.log("- TASK 9: ", artistByCountry(artists, "Spanish"));
 //should log [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 
 
