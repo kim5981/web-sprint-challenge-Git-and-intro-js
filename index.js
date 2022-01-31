@@ -391,14 +391,20 @@ For example artistInfo(artists, 'Frida Kahlo') will return:
 
 //receive an array and name as parameters in function
 function artistInfo (array, name){
+  //create new array
   const artistBio = [];
+  //loop thru artists
    for (let i = 0; i < array.length; i++) {
+     //once you find name in artists
       if (array[i].name === name){
-        return artistBio.push(array[i].bio);
+        //push the bio of that artist into the new array we made
+        artistBio.push(array[i].bio);
       }
      }
+     //when function artistInfo is called, it should return the array artistBio      
 return artistBio;
 }
+
 
 // console.log("- TASK 8: ", artistInfo(artists, 'Frida Kahlo'));
 console.log(artistInfo(artists, 'Frida Kahlo'));
