@@ -274,23 +274,14 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-
-
-
 //split will take what's in "" and compile it into a list (a new array)
-
-
-
-
-
-
 //take array as parameter
 function get20s (array) {
-  //making a new array for the names to be stored in
+  //new array for the names to be stored in
   const newArray = [];
-//loop thru array - artists array
+//loop thru artists array
   for (let i = 0; i < array.length; i++) {
-     //split artists  at desired index by "-" and if the contents are between the century 1900 - 2000 
+     //split artists at index++ in years key by "-" and if the contents are between the century 1900 - 2000 
      if (array[i].years.split("-")[0] > 1900 && array[i].years.split("-")[0] < 2000) {
        //push the contents of that ^^^^ to the array we made earlier (newArray)
        newArray.push(array[i].name)
@@ -314,15 +305,12 @@ Use removeArtist to do the following:
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
 
-function removeArtist(array, i) { 
-  array.splice(i,1)
+function removeArtist(array, index) { 
+  array.splice(index,1)
   return array.length;
 }
 
 //console.log("- TASK 5", removeArtist(artists, 0));
-
-
-
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -347,23 +335,18 @@ let newArtist = {
   id: 20, //20th index
   name: "kim", 
   years: "1995 - 2022",
-  genre: "web development", 
+  genre: "web design", 
   nationality: "american",
   bio: "struggling web 52 student",
   }
 
-
-
 function addArtist(array) {
-//push the object
+//push object newArtist into the artists array
  array.push(newArtist)
-//return the array
 return array;
-
 }
 
 //console.log("- TASK 6: ", addArtist(artists));
-//console.log("- TASK 6: is finally working!!!");
 
 
 
@@ -393,36 +376,35 @@ function lotsOfArt(array) {
 
 //console.log("- TASK 7: ", lotsOfArt(artists));
 //should return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
-//console.log("- TASK 7: IS ALSO FINALLY WORKING !!!!");
-
-
 
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistInfo to do the following: 
-1. Receive an array 
-2. Receive an artist's name
-3. return the artists bio
+1. Receive an array //received array as first param
+2. Receive an artist's name //received name as second
+3. return the artists bio //returned bio from array
 
 For example artistInfo(artists, 'Frida Kahlo') will return: 
   ["Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."]
 */
 
-
 //receive an array and name as parameters in function
-function artistInfo(array, name){
+function artistInfo (array, name){
   //loop through the input array (artists)
    for (let i = 0; i < array.length; i++) {
-     if (array[i].name === name) {
-      return array[i].bio;
+     
+     //once the loop finds the name that's input as a parameter it can stop
+      if (array[i].name === name){
+        //the loop can then return the index from that name and return the bio from that index
+        return array[i].bio;
+      }
      }
-    }
 }
 
-//console.log("- TASK 8: ", artistInfo(artists, "Frida Kahlo"));
-//artistInfo is logging correctly but is not passing the test 
-
+//array[i].artistName === artistName
+console.log("- TASK 8: ", artistInfo(artists, 'Frida Kahlo'));
+//artistInfo console log matches what the test shows
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
