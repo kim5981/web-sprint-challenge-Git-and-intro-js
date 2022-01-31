@@ -381,9 +381,9 @@ function lotsOfArt(array) {
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistInfo to do the following: 
-1. Receive an array //received array as first param
-2. Receive an artist's name //received name as second
-3. return the artists bio //returned bio from array
+1. Receive an array 
+2. Receive an artist's name 
+3. return the artists bio 
 
 For example artistInfo(artists, 'Frida Kahlo') will return: 
   ["Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."]
@@ -391,19 +391,17 @@ For example artistInfo(artists, 'Frida Kahlo') will return:
 
 //receive an array and name as parameters in function
 function artistInfo (array, name){
-  //loop through the input array (artists)
+  const artistBio = [];
    for (let i = 0; i < array.length; i++) {
-     
-     //once the loop finds the name that's input as a parameter it can stop
       if (array[i].name === name){
-        //the loop can then return the index from that name and return the bio from that index
-        return array[i].bio;
+        return artistBio.push(array[i].bio);
       }
      }
+return artistBio;
 }
 
-//array[i].artistName === artistName
-console.log("- TASK 8: ", artistInfo(artists, 'Frida Kahlo'));
+// console.log("- TASK 8: ", artistInfo(artists, 'Frida Kahlo'));
+console.log(artistInfo(artists, 'Frida Kahlo'));
 //artistInfo console log matches what the test shows
 
 
